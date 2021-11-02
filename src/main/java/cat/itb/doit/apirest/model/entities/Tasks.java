@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Tasks {
     @Id @GeneratedValue
     private long id;
-    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "taskList")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Lists list;
     private String description;
     private boolean stat;

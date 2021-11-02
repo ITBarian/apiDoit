@@ -9,7 +9,7 @@ import java.util.List;
 public class Lists {
     @Id @GeneratedValue
     private long id;
-    private String name;
-    @OneToMany(mappedBy = "list", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     private List<Tasks> taskList = new ArrayList<>();
+    private String name;
 }
