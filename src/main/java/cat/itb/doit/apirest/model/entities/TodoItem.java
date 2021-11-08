@@ -4,11 +4,11 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data @Entity
-public class Tasks {
+public class TodoItem {
     @Id @GeneratedValue
     private long id;
     @ManyToOne(fetch = FetchType.LAZY)
-    private Lists list;
+    private TodoList list;
     private String description;
     private boolean stat;
     private int priority;

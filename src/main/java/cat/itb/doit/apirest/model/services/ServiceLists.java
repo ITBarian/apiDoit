@@ -1,6 +1,6 @@
 package cat.itb.doit.apirest.model.services;
-import cat.itb.doit.apirest.model.entities.Lists;
-import cat.itb.doit.apirest.model.repositoris.RepoLists;
+import cat.itb.doit.apirest.model.entities.TodoList;
+import cat.itb.doit.apirest.model.repositoris.RepoTodoList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -8,22 +8,22 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ServiceLists {
-    private final RepoLists repoLists;
-    public List<Lists> allLists(){
-        return repoLists.findAll();
+    private final RepoTodoList repoTodoList;
+    public List<TodoList> allLists(){
+        return repoTodoList.findAll();
     }
 
-    public Lists list(long id) {
-        return repoLists.getById(id);
+    public TodoList list(long id) {
+        return repoTodoList.getById(id);
     }
 
-    public Lists addLists(Lists list) {
-        return repoLists.save(list);
+    public TodoList addLists(TodoList list) {
+        return repoTodoList.save(list);
     }
 
-    public Lists deleteLists(long id) {
-        Lists l = repoLists.getById(id);
-        repoLists.deleteById(id);
+    public TodoList deleteLists(long id) {
+        TodoList l = repoTodoList.getById(id);
+        repoTodoList.deleteById(id);
         return l;
     }
 }
