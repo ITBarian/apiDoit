@@ -12,4 +12,6 @@ public class TodoItem {
     private String description;
     private boolean stat;
     private int priority;
+
+
 }

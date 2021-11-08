@@ -1,7 +1,7 @@
 package cat.itb.doit.apirest.controller;
 
 import cat.itb.doit.apirest.model.entities.TodoList;
-import cat.itb.doit.apirest.model.services.ServiceLists;
+import cat.itb.doit.apirest.model.services.ServiceTodoList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,33 +9,33 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class ListsController {
+public class TodoListController {
 
-    private final ServiceLists serviceLists;
+    private final ServiceTodoList serviceTodoList;
 
     @GetMapping("/hola")
     List<TodoList> holaMundo(){
-        return serviceLists.allLists();
+        return serviceTodoList.allLists();
     }
 
     @GetMapping("/Lists")
     List<TodoList> printLists(){
-        return serviceLists.allLists();
+        return serviceTodoList.allLists();
     }
 
     @GetMapping("/Lists/{id}")
     TodoList printList(@PathVariable long id){
-        return serviceLists.list(id);
+        return serviceTodoList.list(id);
     }
 
     @PostMapping("/Lists")
     public TodoList createLists(@RequestBody TodoList list){
-        return serviceLists.addLists(list);
+        return serviceTodoList.addLists(list);
     }
 
     @DeleteMapping("/Lists/{id}")
     TodoList deleteLists(@PathVariable long id){
-        return serviceLists.deleteLists(id);
+        return serviceTodoList.deleteLists(id);
     }
 
 }

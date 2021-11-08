@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ServiceLists {
+public class ServiceTodoList {
     private final RepoTodoList repoTodoList;
     public List<TodoList> allLists(){
         return repoTodoList.findAll();

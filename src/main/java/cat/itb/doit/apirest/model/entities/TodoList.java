@@ -12,4 +12,11 @@ public class TodoList {
     @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     private List<TodoItem> taskList = new ArrayList<>();
     private String name;
+
+    protected TodoList() {}
+
+    public TodoList(String name) {
+        this.name = name;
+    }
+
 }
