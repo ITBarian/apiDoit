@@ -7,11 +7,11 @@ import javax.persistence.*;
 public class TodoItem {
     @Id @GeneratedValue
     private long id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private TodoList list;
     private String description;
     private boolean stat;
     private int priority;
+    @ManyToOne
+    private TodoList list;
 
 
 }
