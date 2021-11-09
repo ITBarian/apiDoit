@@ -34,7 +34,7 @@ public class TodoListController {
     Optional<TodoList> deteleteTodoList(@PathVariable long idTodoList){return serviceTodoList.deleteTodoLists(idTodoList);}
 
     @PostMapping("/todoList/{idTodoList}/todoItems")
-    public TodoItem createTodoList(@PathVariable long idTodoList, @RequestBody TodoItem todoItem){
+    public Optional<TodoItem> createTodoList(@PathVariable long idTodoList, @RequestBody TodoItem todoItem){
         return serviceTodoList.addTodoItem(idTodoList, todoItem);
     }
 

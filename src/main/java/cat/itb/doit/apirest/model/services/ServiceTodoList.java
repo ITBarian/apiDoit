@@ -32,7 +32,10 @@ public class ServiceTodoList {
         return l;
     }
 
-    public TodoItem addTodoItem(long idTodoList, TodoItem todoItem) {
-        return repoTodoItem.save(todoItem);
+    public Optional<TodoItem> addTodoItem(long idTodoList, TodoItem todoItem) {
+        return repoTodoList.findById(idTodoList).map(todoList -> {
+            todoItem.setList(todoList);
+            return repoTodoItem.save(todoItem);
+        });
     }
 }
