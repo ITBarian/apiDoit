@@ -15,34 +15,32 @@ public class TodoListController {
 
     private final ServiceTodoList serviceTodoList;
 
-    @GetMapping("/hola")
-    List<TodoList> holaMundo(){
-        return serviceTodoList.allLists();
+    @GetMapping("/todoList")
+    List<TodoList> printTodoLists(){
+        return serviceTodoList.allTodoLists();
     }
 
-    @GetMapping("/Lists")
-    List<TodoList> printLists(){
-        return serviceTodoList.allLists();
+    @GetMapping("/todoList/{idTodoList}")
+     Optional<TodoList> printTodoList(@PathVariable long idTodoList){ //Optional<TodoList>
+        return serviceTodoList.todoList(idTodoList);
     }
 
-    @GetMapping("/Lists/{id}")
-     TodoList printList(@PathVariable long id){ //Optional<TodoList>
-        return serviceTodoList.list(id);
+    @PostMapping("/todoList")
+    public TodoList createTodoList(@RequestBody TodoList todoList){
+        return serviceTodoList.addTodoList(todoList);
     }
 
-    @PostMapping("/Lists")
-    public TodoList createLists(@RequestBody TodoList list){
-        return serviceTodoList.addLists(list);
+    @DeleteMapping("/todoList/{idTodoList}")
+    Optional<TodoList> deteleteTodoList(@PathVariable long idTodoList){return serviceTodoList.deleteTodoLists(idTodoList);}
+
+    @PostMapping("/todoList/{idTodoList}/todoItems")
+    public TodoItem createTodoList(@PathVariable long idTodoList, @RequestBody TodoItem todoItem){
+        return serviceTodoList.addTodoItem(idTodoList, todoItem);
     }
 
-    @DeleteMapping("/Lists/{id}")
-    TodoList deleteLists(@PathVariable long id){
-        return serviceTodoList.deleteLists(id);
-    }
-
-//    @PostMapping("/Lists/{id}")
-//    public TodoItem createLists(@PathVariable long id, @RequestBody TodoItem item){
-//        return serviceTodoList.addItem(id, item);
+//    @GetMapping("/todoList")
+//    List<TodoList> printTodoLists(){
+//        return serviceTodoList.allTodoLists();
 //    }
 
 }

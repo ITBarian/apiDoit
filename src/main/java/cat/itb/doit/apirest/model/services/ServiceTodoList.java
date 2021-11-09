@@ -6,7 +6,6 @@ import cat.itb.doit.apirest.model.repositoris.RepoTodoList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,31 +14,25 @@ import java.util.Optional;
 public class ServiceTodoList {
     private final RepoTodoList repoTodoList;
     private final RepoTodoItem repoTodoItem;
-    public List<TodoList> allLists(){
+    public List<TodoList> allTodoLists(){
         return repoTodoList.findAll();
     }
 
-    //public Optional<TodoList> list(long id) {
-    //        System.out.println(repoTodoList.findById(id));
-    //        return repoTodoList.findById(id);
-    //    }
-    public TodoList list(long id) {
-        return repoTodoList.getById(id);
+    public Optional<TodoList> todoList(long idTodoList) {
+            return repoTodoList.findById(idTodoList);
+       }
+
+    public TodoList addTodoList(TodoList todoList) {
+        return repoTodoList.save(todoList);
     }
 
-    public TodoList addLists(TodoList list) {
-        return repoTodoList.save(list);
-    }
-
-    public TodoList deleteLists(long id) {
-        TodoList l = repoTodoList.getById(id);
+    public Optional<TodoList> deleteTodoLists(long id) {
+        Optional<TodoList> l = repoTodoList.findById(id);
         repoTodoList.deleteById(id);
         return l;
     }
 
-    public TodoItem addItem(long id, TodoItem item) {
-
-        return repoTodoItem.save(item);
-
+    public TodoItem addTodoItem(long idTodoList, TodoItem todoItem) {
+        return repoTodoItem.save(todoItem);
     }
 }
