@@ -11,10 +11,11 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ServiceTodoList {
+public class ServiceTodo {
     private final RepoTodoList repoTodoList;
     private final RepoTodoItem repoTodoItem;
-    public List<TodoList> allTodoLists(){
+
+    public List<TodoList> allTodoList(){
         return repoTodoList.findAll();
     }
 
@@ -38,4 +39,10 @@ public class ServiceTodoList {
             return repoTodoItem.save(todoItem);
         });
     }
+
+    public Optional<TodoItem> todoItem(long idTodoItem) { return  repoTodoItem.findById(idTodoItem); }
+
+    public List<TodoItem> allTodoItemOfList(long idTodoList) { return repoTodoItem.findTodoItemOfTodoList(idTodoList); }
+
+    public List<TodoItem> allTodoItem() { return repoTodoItem.findAll(); }
 }
