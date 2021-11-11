@@ -5,28 +5,28 @@ Creando, eliminando y modificando listas
 Dando una lista, añadimos un item, lo marcamos como hecho o no, reordenación de los items, eliminarlos o modificarlos
 
 #Historias de usuarios
-    *##Crear listas.
-    /todoList
+*##Crear listas.
+/todoList
 
-    *##Eliminar listas.
-    /todoList/{idTodoList}
+*##Eliminar listas.
+/todoList/{idTodoList}
 
-    *##Modificar listas.
+*##Modificar listas.
 
 
-    *##Mostrar listas.
-    /todoList
+*##Mostrar listas.
+/todoList
 
-    *##Consultar todos los items de una lista.
-    /todoList/{idTodoList}
+*##Consultar todos los items de una lista.
+/todoList/{idTodoList}
 
-    *##Consultar un item por ID.
-    /todoList/todoItem/{idTodoItem}
+*##Consultar un item por ID.
+/todoList/todoItem/{idTodoItem}
 
-    *##Añadir un item a una lista.
-    /todoList/{idTodoList}/todoItem
+*##Añadir un item a una lista.
+/todoList/{idTodoList}/todoItem
 
-    *##Marcar y desmarcar un item.
+*##Marcar y desmarcar un item.
 
-    *##Eliminar item de una lista.
-    /todoList/todoItem/{idTodoItem}
+*##Eliminar item de una lista.
+/todoList/todoItem/{idTodoItem}
