@@ -33,19 +33,13 @@ public class ServiceTodo {
     }
 
 
-    public Optional<TodoItem> addTodoItem(long idTodoList, TodoItem todoItem) {
-        return repoTodoList.findById(idTodoList).map(todoList -> {
-            todoItem.setList(todoList);
-            return repoTodoItem.save(todoItem);
-        });
-    }
-
-    public Optional<TodoItem> todoItem(long idTodoItem) { return  repoTodoItem.findById(idTodoItem); }
-
+    public Optional<TodoItem> addTodoItem(long idTodoList, TodoItem todoItem) { return repoTodoList.findById(idTodoList).map(todoList->{todoItem.setList(todoList); return repoTodoItem.save(todoItem);}); }
     public List<TodoItem> allTodoItemOfList(long idTodoList) { return repoTodoItem.findTodoItemOfTodoList(idTodoList); }
+
 
     public List<TodoItem> allTodoItem() { return repoTodoItem.findAll(); }
 
+    public Optional<TodoItem> todoItem(long idTodoItem) { return  repoTodoItem.findById(idTodoItem); }
     public Optional<TodoItem> deleteTodoItem(long idTodoItem) {
         Optional<TodoItem> todoItem = repoTodoItem.findById(idTodoItem);
         repoTodoItem.deleteById(idTodoItem);
@@ -53,4 +47,8 @@ public class ServiceTodo {
     }
 
 
+    public TodoList updateTodoList(long idTodoList, TodoList todoList) {
+        //TODO
+        return todoList;
+    }
 }
