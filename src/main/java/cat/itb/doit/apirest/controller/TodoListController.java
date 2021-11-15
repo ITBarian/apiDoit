@@ -16,11 +16,12 @@ public class TodoListController {
 
     private final ServiceTodo serviceTodo;
 
+    //TodoList Basic Controllers
     @GetMapping("/todoList")
     List<TodoList> printAllTodoList(){
         return serviceTodo.allTodoList();
     }
-
+    //TodoList CRUD
     @GetMapping("/todoList/{idTodoList}")
     Optional<TodoList> printTodoList(@PathVariable long idTodoList){ //Optional<TodoList>
         return serviceTodo.todoList(idTodoList);
@@ -32,21 +33,22 @@ public class TodoListController {
     @PostMapping("/todoList/{idTodoList}")
     TodoList updateTodoList(@PathVariable long idTodoList, @RequestBody TodoList todoList){ return serviceTodo.updateTodoList(idTodoList, todoList); }
 
+    //Principal Controller
+    @GetMapping("/todoList/{idTodoList}/todoItem")
+    List<TodoItem> printTodoItemOfList(@PathVariable long idTodoList){ return serviceTodo.allTodoItemOfList(idTodoList); }
 
+    //TodoItem Basic Controllers
     @GetMapping("/todoList/todoItem")
     List<TodoItem> printAllTodoItem(){ return serviceTodo.allTodoItem(); }
-
+    //TodoItem CRUD
     @GetMapping("/todoList/todoItem/{idTodoItem}")
     Optional<TodoItem> printTodoItem(@PathVariable long idTodoItem){ return serviceTodo.todoItem(idTodoItem); }
     @PostMapping("/todoList/{idTodoList}/todoItem")
     Optional<TodoItem> addTodoItem(@PathVariable long idTodoList, @RequestBody TodoItem todoItem){ return serviceTodo.addTodoItem(idTodoList, todoItem); }
     @DeleteMapping("/todoList/todoItem/{idTodoItem}")
     Optional<TodoItem> deleteTodoItem(@PathVariable long idTodoItem){ return serviceTodo.deleteTodoItem(idTodoItem); }
-
-    @GetMapping("/todoList/{idTodoList}/todoItem")
-    List<TodoItem> printTodoItemOfList(@PathVariable long idTodoList){ return serviceTodo.allTodoItemOfList(idTodoList); }
-
-
+    @PostMapping("/todoList/todoItem/{idTodoItem}")
+    TodoItem updateTodoItem(@PathVariable long idTodoItem, @RequestBody TodoItem todoItem){ return serviceTodo.updateTodoItem(idTodoItem, todoItem); }
 
 
 }
