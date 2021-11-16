@@ -17,7 +17,7 @@ public class TodoListController {
     private final ServiceTodo serviceTodo;
 
     //TodoList Basic Controllers
-    @GetMapping("/todoList")
+    @GetMapping("/todoList") @CrossOrigin(origins="http://localhost:63342")
     List<TodoList> printAllTodoList(){
         return serviceTodo.allTodoList();
     }
