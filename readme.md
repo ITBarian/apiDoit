@@ -4,7 +4,7 @@
 A través de un API Rest desarrollamos una aplicación web de gestión de ítems en una ToDoList dinámica.
 En esta aplicación web podemos trabajar con más de una lista y con los items.
 Creando, eliminando y modificando listas
-Dando una lista, podemos añadir un item, marcarlo como hecho o no, reordenarlos, eliminarlos o modificarlos.
+Dando una lista, podemos añadir un ítem, marcarlo como hecho o no, reordenarlos, eliminarlos o modificarlos.
 
 ## ACCIONES
 ### Ver todas las listas
@@ -26,20 +26,20 @@ Para obtener el DELETE de una lista usamos el end-point **/todoList/{idTodoList}
 ### Ver todos los items
 Para ver todos los items de las listas usamos el end-point **/todoList/todoItem**
 
-### Añadir un item a una lista.
-Para obtener el POST de un item en una lista usamos el end-point **/todoList/{idTodoList}/todoItem**
+### Añadir un ítem a una lista.
+Para obtener el POST de un ítem en una lista usamos el end-point **/todoList/{idTodoList}/todoItem**
 
 ### Consultar todos los items de una lista.
 Para obtener el GET de los items en una lista por su ID usamos el end-point **/todoList/{idTodoList}/todoItem**
 
-### Marcar y desmarcar un item.
-Para actualizar el estado del item con un POST usamos el end-point **/todoList/todoItem/{idTodoItem}**
+### Marcar y desmarcar un ítem.
+Para actualizar el estado del ítem con un POST usamos el end-point **/todoList/todoItem/{idTodoItem}**
 
-### Consultar un item.
-Para obtener el GET de un item por su ID **/todoList/todoItem/{idTodoItem}**
+### Consultar un ítem.
+Para obtener el GET de un ítem por su ID **/todoList/todoItem/{idTodoItem}**
 
-### Eliminar item de una lista.
-Para obtener el DELETE de un item usamos el end-point **/todoList/todoItem/{idTodoItem}**
+### Eliminar ítem de una lista.
+Para obtener el DELETE de un ítem usamos el end-point **/todoList/todoItem/{idTodoItem}**
 
 ## API-REST
 ### Heroku
