@@ -1,21 +1,24 @@
-
 var request = new XMLHttpRequest()
-
 request.open('GET', 'https://apidoit.herokuapp.com/todoList', true)
 request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
-
-    if (request.status >= 200 && request.status < 400) {
-        data.forEach(e => {
-            console.log(e)
-        })
-    } else {
-        console.log('error')
-    }
+    console.log(data)
+    // if (request.status >= 200 && request.status < 400) {
+    //     data.forEach(e => {
+    //         console.log(e)
+    //     })
+    // } else {
+    //     console.log('error')
+    // }
 }
 
 request.send()
+
+var object1 = JSON.parse(data);
+console.log(object1)
+document.getElementById("demo").innerHTML = object1.name;
+
 
 
 // // Create a "close" button and append it to each list item
