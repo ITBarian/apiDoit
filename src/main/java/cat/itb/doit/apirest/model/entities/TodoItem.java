@@ -16,4 +16,8 @@ public class TodoItem {
     private int priority;
     @ManyToOne
     private TodoList list;
+
+    public long getList() {
+        return list.getId();
+    }
 }
