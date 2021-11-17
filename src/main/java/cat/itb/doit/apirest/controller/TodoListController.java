@@ -17,7 +17,7 @@ public class TodoListController {
     private final ServiceTodo serviceTodo;
 
     //TodoList Basic Controllers
-    @GetMapping("/todoList") @CrossOrigin(origins="https://edgar.benedico.7e4.gitlab.io/doit/")
+    @GetMapping("/todoList") @CrossOrigin(origins="null")
     List<TodoList> printAllTodoList(){
         return serviceTodo.allTodoList();
     }
@@ -38,7 +38,7 @@ public class TodoListController {
     List<TodoItem> printTodoItemOfList(@PathVariable long idTodoList){ return serviceTodo.allTodoItemOfList(idTodoList); }
 
     //TodoItem Basic Controllers
-    @GetMapping("/todoList/todoItem") @CrossOrigin(origins="https://edgar.benedico.7e4.gitlab.io/doit/")
+    @GetMapping("/todoList/todoItem") @CrossOrigin(origins="null")
     List<TodoItem> printAllTodoItem(){ return serviceTodo.allTodoItem(); }
     //TodoItem CRUD
     @GetMapping("/todoList/todoItem/{idTodoItem}")
