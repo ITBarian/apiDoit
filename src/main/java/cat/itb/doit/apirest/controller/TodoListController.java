@@ -33,11 +33,11 @@ public class TodoListController {
     TodoList updateTodoList(@PathVariable long idTodoList, @RequestBody TodoList todoList){ return serviceTodo.updateTodoList(idTodoList, todoList); }
 
     //Principal Controller
-    @GetMapping("/todoList/{idTodoList}/todoItem") @CrossOrigin(origins="*")
+    @GetMapping("/todoList/{idTodoList}/todoItem")
     List<TodoItem> printTodoItemOfList(@PathVariable long idTodoList){ return serviceTodo.allTodoItemOfList(idTodoList); }
 
     //TodoItem Basic Controllers
-    @GetMapping("/todoList/todoItem") @CrossOrigin(origins="null")
+    @GetMapping("/todoList/todoItem") @CrossOrigin(origins="*")
     List<TodoItem> printAllTodoItem(){ return serviceTodo.allTodoItem(); }
     //TodoItem CRUD
     @GetMapping("/todoList/todoItem/{idTodoItem}")
