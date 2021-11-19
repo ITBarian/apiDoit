@@ -63,5 +63,5 @@ Es una herramienta que hace que el desarrollo de aplicaciones web y microservici
 
 
 ## Base de datos
-### *PosgreSQL*
+### *PostgreSQL*
 Se ha realizado una migración de la base de datos de H2 a PostgreSQL.
