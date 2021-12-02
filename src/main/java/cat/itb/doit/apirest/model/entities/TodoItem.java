@@ -7,9 +7,9 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
-@Data @Entity
+@Data @Entity @SequenceGenerator(name = "seq", initialValue = 1)
 public class TodoItem {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(generator = "seq")
     private long id;
     private String description;
     private boolean stat;
