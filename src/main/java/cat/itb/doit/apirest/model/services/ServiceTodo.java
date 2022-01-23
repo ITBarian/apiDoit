@@ -47,7 +47,7 @@ public class ServiceTodo {
         repoTodoItem.deleteById(idTodoItem);
         return todoItem;
     }
-    public TodoItem updateTodoItem(long idTodoItem, TodoItem todoItem) {todoItem.setId(idTodoItem); return repoTodoItem.save(todoItem); }
+    public TodoItem updateTodoItem(long idTodoItem, TodoItem todoItem) {todoItem.setId(idTodoItem); todoItem.setList((TodoList) repoTodoList.findExactList(todoItem.getList())); return repoTodoItem.save(todoItem); }
 
 
 
