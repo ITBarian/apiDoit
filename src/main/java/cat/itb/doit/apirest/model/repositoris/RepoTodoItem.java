@@ -10,4 +10,7 @@ public interface RepoTodoItem extends JpaRepository<TodoItem, Long> {
 
     @Query(value = "SELECT * FROM TODO_ITEM u WHERE u.LIST_ID = ?1", nativeQuery = true)
     List<TodoItem> findTodoItemOfTodoList(long idTodoList);
+
+    @Query(value = "SELECT * FROM TODO_ITEM", nativeQuery = true)
+    List<TodoItem> findAllTodoItem();
 }

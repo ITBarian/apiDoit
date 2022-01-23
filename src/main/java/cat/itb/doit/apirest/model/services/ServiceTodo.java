@@ -38,7 +38,7 @@ public class ServiceTodo {
     public List<TodoItem> allTodoItemOfList(long idTodoList) { return repoTodoItem.findTodoItemOfTodoList(idTodoList); }
 
     //TodoItem Basic Services
-    public List<TodoItem> allTodoItem() { return repoTodoItem.findAll(); }
+    public List<TodoItem> allTodoItem() { return repoTodoItem.findAllTodoItem(); }
     //TodoItem CRUD
     public Optional<TodoItem> todoItem(long idTodoItem) { return  repoTodoItem.findById(idTodoItem); }
     public Optional<TodoItem> addTodoItem(long idTodoList, TodoItem todoItem) { return repoTodoList.findById(idTodoList).map(todoList->{todoItem.setList(todoList); return repoTodoItem.save(todoItem);}); }
