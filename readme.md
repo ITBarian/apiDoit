@@ -48,7 +48,7 @@ Para obtener el GET de un ítem por su ID **/todoList/todoItem/{idTodoItem}**
 
 
 ### *Eliminar ítem de una lista.*
-Para obtener el DELETE de un ítem usamos el end-point **/todoList/todoItem/{idTodoItem}**
+Para obtener el DELETE de un ítem usamos el end-point **/todoList/{idTodoList}/todoItem/{idTodoItem}**
 
 
 ## API-REST
