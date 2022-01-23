@@ -47,7 +47,7 @@ public class TodoListController {
     @DeleteMapping("/todoList/todoItem/{idTodoItem}") @CrossOrigin(origins="*")
     Optional<TodoItem> deleteTodoItem(@PathVariable long idTodoItem){ return serviceTodo.deleteTodoItem(idTodoItem); }
     @PostMapping("/todoList/{idTodoList}/todoItem/{idTodoItem}") @CrossOrigin(origins="*")
-    TodoItem updateTodoItem(@PathVariable long idTodoList, @PathVariable long idTodoItem, @RequestBody TodoItem todoItem){ return serviceTodo.updateTodoItem(idTodoList, idTodoItem, todoItem); }
+    Optional<TodoItem> updateTodoItem(@PathVariable long idTodoList, @PathVariable long idTodoItem, @RequestBody TodoItem todoItem){ return serviceTodo.updateTodoItem(idTodoList, idTodoItem, todoItem); }
 
 
 }

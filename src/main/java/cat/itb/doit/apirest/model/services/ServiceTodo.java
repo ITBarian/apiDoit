@@ -48,7 +48,7 @@ public class ServiceTodo {
         return todoItem;
     }
 //    public TodoItem updateTodoItem(long idTodoItem, TodoItem todoItem) {todoItem.setId(idTodoItem); todoItem.setList((TodoList) repoTodoList.findExactList(todoItem.getList())); return repoTodoItem.save(todoItem); }
-    public TodoItem updateTodoItem(long idTodoList, long idTodoItem, TodoItem todoItem) { todoItem.setId(idTodoItem); todoItem.setList((TodoList) repoTodoList.findExactList(idTodoList)); return repoTodoItem.save(todoItem); }
+    public Optional<TodoItem> updateTodoItem(long idTodoList, long idTodoItem, TodoItem todoItem) { todoItem.setId(idTodoItem); return repoTodoList.findById(idTodoList).map(todoList->{todoItem.setList(todoList); return repoTodoItem.save(todoItem);}); }
 
 
 
