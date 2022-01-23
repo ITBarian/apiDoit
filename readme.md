@@ -20,7 +20,7 @@ Para obtener el GET del la lista que hemos creado usamos el end-point **/todoLis
 
 
 ### *Modificar listas.*
-Para obtener una actualizacion de una lista es usamos el end-point **/todoList/{idTodoList}**
+Para obtener una actualizacion POST de una lista usamos el end-point **/todoList/{idTodoList}**
 
 
 ### *Eliminar listas.*
@@ -39,7 +39,7 @@ Para obtener el POST de un ítem en una lista usamos el end-point **/todoList/{i
 Para obtener el GET de los items en una lista por su ID usamos el end-point **/todoList/{idTodoList}/todoItem**
 
 
-### *Marcar y desmarcar un ítem.*
+### *Marcar y desmarcar un ítem o actualizar descripción.*
 Para actualizar el estado del ítem con un POST usamos el end-point **/todoList/todoItem/{idTodoItem}**
 
 
